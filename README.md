@@ -4,6 +4,8 @@ This project was merged by two other that are now deprecated. One is the lottery
 
 Now we have a lottery project :)
 
+Abs out
+
 ## Available Scripts
 
 In the project directory, you can run:
