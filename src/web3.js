@@ -4,7 +4,9 @@ const web3 = new Web3(window.ethereum);
 
 if (window.ethereum) {
    try {
-   	web3 = new Web3(window.ethereum)
+       console.log('entrou')
+       let web3Provider = new Web3(window.ethereum)
+       web3 = new Web3(web3Provider)
        window.ethereum.enable().then(function() {
           // User has allowed account access to DApp...
       });
