@@ -1,4 +1,5 @@
 # Lottery project
+THIS IS A PRIVATE REP....
 
 This project was merged by two other that are now deprecated. One is the lottery project that had the smart contracts for the lottery system and the other was the lottery-ui (the user interface).
 
