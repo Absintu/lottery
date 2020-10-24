@@ -1,4 +1,4 @@
-import web3 from './web3';
+import web3 from './web3'
 
 const address = '0x4a347CB7238bD946C0A2965771faA97ac8caCCd5';
 const abi = [
@@ -93,5 +93,6 @@ const abi = [
     "type": "function"
   }
 ]
-
-export default new web3.eth.Contract(abi, address);
+var version = web3.version;
+console.log(version)
+export default new web3.eth.Contract(abi, address)
