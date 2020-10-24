@@ -1,6 +1,6 @@
 # Lottery project
 
-This project was merged by tow other that ar now deprecated. One is the lottery project that had the smart contracts for the lottery system and the other was the lottery-ui (the user interface).
+This project was merged by two other that are now deprecated. One is the lottery project that had the smart contracts for the lottery system and the other was the lottery-ui (the user interface).
 
 Now we have a lottery project :)
 
