@@ -1,16 +1,20 @@
 import React, {Component} from 'react'
-import {Card} from 'semantic-ui-react'
+import {Card, Icon} from 'semantic-ui-react'
 import uni from './uni.svg'
 
 class LotteryUni extends Component{
     render(){
         return(
-            <Card className='Lottery'
-                  image={uni}
-                  header='Ethereum Lottery'
-                  meta='0x4a347CB7238bD946C0A2965771faA97ac8caCCd5'
-                  description='Enter the lottery with 1 Ticket = 1 Uni'
-                  /* extra={extra} */
+            <Card
+                image={uni}
+                header='Sushi Lottery'
+                meta='Open until TODO'
+                description='Enter the lottery with 1 Ticket = 1 Sushi'
+                extra={<a>
+                        <Icon name='user' ref="https://goerli.etherscan.io/address/0x4a347CB7238bD946C0A2965771faA97ac8caCCd5"/>
+                        Contract adress:
+                        0x4a347CB7238bD946C0A2965771faA97ac8caCCd5
+                    </a>}
             />
         )
     }

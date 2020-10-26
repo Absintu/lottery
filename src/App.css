@@ -1,12 +1,12 @@
-.App {
+/* .App { */
  /* text-align: center; 
  display: flex;
    /* flex-direction: row;
     align-items: left;
     justify-content: left;*/
-  background-color: #491212;
-  color: #c2442b;
-}
+  /* background-color: #491212;
+  color: #c2442b; 
+} */
 
 .App-logo {
   height: 40vmin;
@@ -32,7 +32,7 @@
 .App-wrapper{
   display:grid;
   grid-template-columns: 15% 30% 55%;
-  background:#491212;
+  /* background:#491212; */
   padding:1em;
 }
 .App-button{

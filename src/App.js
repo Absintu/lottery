@@ -2,11 +2,12 @@ import React,{ Component} from 'react'
 import './App.css'
 import web3 from './web3'
 import lottery from './lottery'
-import Header from './components/Header'
+import TitleBar from './components/TitleBar'
 import LotteryEth from './components/LotteryEth'
 import LotterySushi from './components/LotterySushi'
 import LotteryUni from './components/LotteryUni'
-import {Grid, Image} from 'semantic-ui-react'
+import {Grid, Image, Input, Form, Button, Header} from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
 import monopoly_guy from './components/monopoly_guy.png'
 
 class App extends Component {
@@ -85,99 +86,121 @@ class App extends Component {
 */
     return (
       <div>
-          <div><Header></Header></div>
-          <div class='App-wrapper'>
-            <div>
-              <Image src={monopoly_guy} />
-            </div>
-            <div>
-            <LotteryEth />
-            </div>
-            <div className='App'>
-            <p>
-                This contract is managed by {this.state.manager}.
-                There are currently {this.state.players.length} people entered,
-                competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
-            </p>
-              <hr />
-              <form onSubmit={this.onSubmit}>
-                <h2>Want to try your luck?</h2>
-                <div>
-                  <label>Amount of ether to enter</label>
-                  <input className='App-input'
-                    value={this.state.value}
-                    onChange={event => this.setState({value: event.target.value})}
-                  />
-                </div>
-                <button className='App-button'>Enter</button>
-              </form>
-              <hr />
-                <h2>Ready to pick a winner?</h2>
-                <button className='App-button' onClick={this.onClick}>Pick a winner!</button>
-              <hr />
-            <h1>{this.state.message}</h1>
-            </div>
-            <div>
-              <Image src={monopoly_guy} />
-            </div>
-            <div>
-            <LotterySushi />
-            </div>
-            <div className='App'>
-            <p>
-                This contract is managed by {this.state.manager}.
-                There are currently {this.state.players.length} people entered,
-                competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
-            </p>
-              <hr />
-              <form onSubmit={this.onSubmit}>
-                <h2>Want to try your luck?</h2>
-                <div>
-                  <label>Amount of ether to enter</label>
-                  <input className='App-input'
-                    value={this.state.value}
-                    onChange={event => this.setState({value: event.target.value})}
-                  />
-                </div>
-                <button className='App-button' >Enter</button>
-              </form>
-              <hr />
-                <h2>Ready to pick a winner?</h2>
-                <button className='App-button' onClick={this.onClick}>Pick a winner!</button>
-              <hr />
-            <h1>{this.state.message}</h1>
-            </div>
-            <div>
-              <Image src={monopoly_guy} />
-            </div>
-            <div>
-            <LotteryUni />
-            </div>
-            <div className='App'>
-            <p>
-                This contract is managed by {this.state.manager}.
-                There are currently {this.state.players.length} people entered,
-                competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
-            </p>
-              <hr />
-              <form onSubmit={this.onSubmit}>
-                <h2>Want to try your luck?</h2>
-                <div>
-                  <label>Amount of ether to enter</label>
-                  <input className='App-input'
-                    value={this.state.value}
-                    onChange={event => this.setState({value: event.target.value})}
-                  />
-                </div>
-                <button className='App-button' >Enter</button>
-              </form>
-              <hr />
-                <h2>Ready to pick a winner?</h2>
-                <button className='App-button' onClick={this.onClick}>Pick a winner!</button>
-              <hr />
-            <h1>{this.state.message}</h1>
-            </div>
-          </div>
+          <div><TitleBar></TitleBar></div>
+          <Grid>
+          <Grid columns={3} divided>
+            <Grid.Row>
+              <Grid.Column width={2} >
+                <Image src={monopoly_guy} />
+              </Grid.Column>
+              <Grid.Column width={2}>
+              <LotteryEth />
+              </Grid.Column>
+              <Grid.Column>
+                <div className='App'>
+                  <Header size='small'>
+                      This contract is managed by {this.state.manager}.
+                      There are currently {this.state.players.length} people entered,
+                      competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+                  </Header>
+                  <hr />
+                  <Form onSubmit={this.onSubmit}>
+                    <h2>Want to try your luck?</h2>
+                    <div>
+                      <label>Amount of ether to enter</label>
+                      <Input 
+                        focus 
+                        placeholder='Search...' 
+                        value={this.state.value}
+                        onChange={event => this.setState({value: event.target.value})}
+                      />
+                    </div>
+                    <Button primary>Enter Lottery</Button>
+                  </Form>
+                  <hr />
+                    <h2>Ready to pick a winner?</h2>
+                    <Button secundary onClick={this.onClick}>Pick a winner!</Button>
+                  <hr />
+                <h1>{this.state.message}</h1>
+              </div>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column width={2}>
+                <Image src={monopoly_guy} />
+              </Grid.Column>
+              <Grid.Column width={2}>
+                <LotterySushi />
+              </Grid.Column>
+              <Grid.Column>
+              <div className='App'>
+                  <Header size='small'>
+                      This contract is managed by {this.state.manager}.
+                      There are currently {this.state.players.length} people entered,
+                      competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+                  </Header>
+                  <hr />
+                  <Form onSubmit={this.onSubmit}>
+                    <h2>Want to try your luck?</h2>
+                    <div>
+                      <label>Amount of ether to enter</label>
+                      <Input 
+                        focus 
+                        placeholder='Search...' 
+                        value={this.state.value}
+                        onChange={event => this.setState({value: event.target.value})}
+                      />
+                    </div>
+                    <Button primary>Enter Lottery</Button>
+                  </Form>
+                  <hr />
+                    <h2>Ready to pick a winner?</h2>
+                    <Button secundary onClick={this.onClick}>Pick a winner!</Button>
+                  <hr />
+                <h1>{this.state.message}</h1>
+              </div>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column width={2}>
+                <Image src={monopoly_guy} />
+              </Grid.Column>
+              <Grid.Column width={2}>
+                <LotteryUni />
+              </Grid.Column>
+              <Grid.Column>
+              <div className='App'>
+                  <Header size='small'>
+                      This contract is managed by {this.state.manager}.
+                      There are currently {this.state.players.length} people entered,
+                      competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+                  </Header>
+                  <hr />
+                  <Form onSubmit={this.onSubmit}>
+                    <h2>Want to try your luck?</h2>
+                    <div>
+                      <label>Amount of ether to enter</label>
+                      <Input 
+                        focus 
+                        placeholder='Search...' 
+                        value={this.state.value}
+                        onChange={event => this.setState({value: event.target.value})}
+                      />
+                    </div>
+                    <Button primary>Enter Lottery</Button>
+                  </Form>
+                  <hr />
+                    <h2>Ready to pick a winner?</h2>
+                    <Button secundary onClick={this.onClick}>Pick a winner!</Button>
+                  <hr />
+                <h1>{this.state.message}</h1>
+              </div>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          </Grid>
           <div className='Footer'>
           </div>
      </div>
