@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import {Card, Icon, Image} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
-import ethereum from './ethereum.svg'
+import ethereum from './ethereum.png'
+import './Lottery.css'
 
 class LotteryEth extends Component{
     render(){
-        return( /* className='Lottery' */
-            <Card>
+        return(  <div className='Lottery'>
+            <Card background-color='transparent'>
                 <Image src={ethereum} wrapped ui={false} size='medium'/>
                 <Card.Content>
                 <Card.Header>Ethereum Lottery</Card.Header>
@@ -25,6 +26,7 @@ class LotteryEth extends Component{
                 </a>
                 </Card.Content>
             </Card>
+            </div>
         )
     }
 }

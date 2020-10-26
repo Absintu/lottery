@@ -1,12 +1,13 @@
-/* .App { */
+.App {
  /* text-align: center; 
  display: flex;
    /* flex-direction: row;
     align-items: left;
     justify-content: left;*/
-  /* background-color: #491212;
-  color: #c2442b; 
-} */
+   /*background-color: #1bbd31;*/
+   background-image: linear-gradient(#50bfbf, #85bf4b);
+  color: rgb(7, 7, 20); 
+}
 
 .App-logo {
   height: 40vmin;

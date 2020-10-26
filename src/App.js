@@ -9,6 +9,7 @@ import LotteryUni from './components/LotteryUni'
 import {Grid, Image, Input, Form, Button, Header} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import monopoly_guy from './components/monopoly_guy.png'
+import SlideMenu from './components/SlideMenu'
 
 class App extends Component {
   state={
@@ -85,25 +86,24 @@ class App extends Component {
       .then(console.log);
 */
     return (
-      <div>
+      <div className='App'>
           <div><TitleBar></TitleBar></div>
           <Grid>
           <Grid columns={3} divided>
             <Grid.Row>
               <Grid.Column width={2} >
-                <Image src={monopoly_guy} />
+                <Image src={monopoly_guy} verticalAlign='bottom'/>
               </Grid.Column>
-              <Grid.Column width={2}>
+              <Grid.Column width={4}>
               <LotteryEth />
               </Grid.Column>
-              <Grid.Column>
-                <div className='App'>
+              <Grid.Column width={8}>
                   <Header size='small'>
                       This contract is managed by {this.state.manager}.
                       There are currently {this.state.players.length} people entered,
                       competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
                   </Header>
-                  <hr />
+                  <hr/>
                   <Form onSubmit={this.onSubmit}>
                     <h2>Want to try your luck?</h2>
                     <div>
@@ -122,7 +122,6 @@ class App extends Component {
                     <Button secundary onClick={this.onClick}>Pick a winner!</Button>
                   <hr />
                 <h1>{this.state.message}</h1>
-              </div>
               </Grid.Column>
             </Grid.Row>
 
@@ -130,17 +129,16 @@ class App extends Component {
               <Grid.Column width={2}>
                 <Image src={monopoly_guy} />
               </Grid.Column>
-              <Grid.Column width={2}>
+              <Grid.Column width={4}>
                 <LotterySushi />
               </Grid.Column>
-              <Grid.Column>
-              <div className='App'>
+              <Grid.Column width={8}>
                   <Header size='small'>
                       This contract is managed by {this.state.manager}.
                       There are currently {this.state.players.length} people entered,
                       competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
                   </Header>
-                  <hr />
+                  <hr/>
                   <Form onSubmit={this.onSubmit}>
                     <h2>Want to try your luck?</h2>
                     <div>
@@ -159,7 +157,6 @@ class App extends Component {
                     <Button secundary onClick={this.onClick}>Pick a winner!</Button>
                   <hr />
                 <h1>{this.state.message}</h1>
-              </div>
               </Grid.Column>
             </Grid.Row>
 
@@ -167,17 +164,16 @@ class App extends Component {
               <Grid.Column width={2}>
                 <Image src={monopoly_guy} />
               </Grid.Column>
-              <Grid.Column width={2}>
+              <Grid.Column width={4}>
                 <LotteryUni />
               </Grid.Column>
-              <Grid.Column>
-              <div className='App'>
+              <Grid.Column width={8}>
                   <Header size='small'>
                       This contract is managed by {this.state.manager}.
                       There are currently {this.state.players.length} people entered,
                       competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
                   </Header>
-                  <hr />
+                  <hr/>
                   <Form onSubmit={this.onSubmit}>
                     <h2>Want to try your luck?</h2>
                     <div>
@@ -196,7 +192,6 @@ class App extends Component {
                     <Button secundary onClick={this.onClick}>Pick a winner!</Button>
                   <hr />
                 <h1>{this.state.message}</h1>
-              </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
