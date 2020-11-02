@@ -73,7 +73,7 @@ class LotteryEthWeekly extends Component{
                     <Icon name='money' />
                     Contract adress:<br/>
                     {lotteryEthWeeklyContract.options.address}
-                    </a>
+                    </a> 
                 }
             />
             </Grid.Column>
