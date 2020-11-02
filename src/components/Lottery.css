@@ -1,7 +1,22 @@
 .Lottery {
-  /*  min-height: 100vh;*/
+    min-height: 100vh;
+    min-width: 400;
    /* display: flex;
     flex-direction: column;
     align-items: center;*/
     justify-content: center;
+}
+
+
+
+.ui.card.daily {
+  background-color: #cd7f32;
+}
+
+.ui.card.weekly {
+  background-color: #C0C0C0;
+}
+
+.ui.card.monthly {
+  background-color: #FFD700;
 }

@@ -7,13 +7,13 @@ class LotteryUni extends Component{
         return(
             <Card
                 image={uni}
-                header='Sushi Lottery'
+                header='UniSwap Lottery'
                 meta='Open until TODO'
-                description='Enter the lottery with 1 Ticket = 1 Sushi'
+                description='Enter the lottery with 1 Ticket = 1 Uni'
                 extra={<a>
                         <Icon name='user' ref="https://goerli.etherscan.io/address/0x4a347CB7238bD946C0A2965771faA97ac8caCCd5"/>
                         Contract adress:
-                        0x4a347CB7238bD946C0A2965771faA97ac8caCCd5
+                        0x11fAD5BD0A1eB9178810c660F2EEF9B5271E4af9
                     </a>}
             />
         )

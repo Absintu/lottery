@@ -22,7 +22,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = "1a59d0af9144e5aaf47e0a37c631f2c";
 //
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+const privateKey = fs.readFileSync(".secret").toString().trim()
 
 module.exports = {
   /**
@@ -48,7 +48,7 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
      },
      goerli: {
-      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/71a59d0af9144e5aaf47e0a37c631f2c`),
+      provider: () => new HDWalletProvider(privateKey, `https://goerli.infura.io/v3/e692e48e183f4772a500fe1ab8d47f03`),
       network_id: 5,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
