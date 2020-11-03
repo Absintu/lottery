@@ -65,7 +65,7 @@ class LotteryEthWeekly extends Component{
                 image={ethereum}
                 header='Weekly Ethereum Lottery'
                 meta='Open until TODO'
-                description='Enter the lottery with 1 Eth = 1 Ticket'
+                description='Enter the lottery with 0.01 Eth = 1 Ticket'
                 extra={
                     <a href={"https://goerli.etherscan.io/address/" +
                             lotteryEthWeeklyContract.options.address

@@ -77,7 +77,7 @@ class LotteryEthDaily extends Component{
                     <span className='date'>Open until TODO</span>
                 </Card.Meta>
                 <Card.Description>
-                Enter the lottery with 1 Eth = 1 Ticket
+                Enter the lottery with 0.01 Eth = 1 Ticket
                 </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
