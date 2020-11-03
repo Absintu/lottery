@@ -1,5 +1,6 @@
-const lottery = artifacts.require('Lottery.sol');
+const lottery = artifacts.require('Lottery');
 assert = require('assert');
+isAddress = require('web3')
 
 contract('Lottery', async(accounts) => {
     let instance;
@@ -39,7 +40,7 @@ contract('Lottery', async(accounts) => {
 
         await instance.enter({
             from: accounts[2],
-            value: web3.utils.toWei("0.02", "ether")
+            value: web3.utils.toWei("0.03", "ether")
         });
 
         await instance.enter({
@@ -61,7 +62,7 @@ contract('Lottery', async(accounts) => {
     it("requires a minimum amount of ether to enter!", async ()=>{
         try{
             await instance.enter({
-                from: account[0],
+                from: accounts[0],
                 value: 0
             });
             assert(false);
@@ -79,5 +80,12 @@ contract('Lottery', async(accounts) => {
         } catch (err){
             assert(err);
         }
+    });
+
+    it('pickWinner() returns an address', async ()=>{
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
     });
 });
