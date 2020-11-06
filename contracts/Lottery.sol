@@ -3,7 +3,7 @@ pragma solidity ^0.6.4;
 
 contract Lottery{
   address payable public manager;
-  address payable[7000] public players;
+  address payable[8000] public players;
   address payable public lastWinner;
   uint public numberOfTickets = 0;
 
