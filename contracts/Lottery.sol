@@ -10,7 +10,7 @@ contract Lottery{
   constructor() public{
     manager = msg.sender;
   }
-
+  
   function enter() public payable{
     require(msg.value >= .01 ether);
     uint temp = msg.value/(1e16);
