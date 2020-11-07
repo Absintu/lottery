@@ -19,7 +19,7 @@ contract Lottery{
   }
 
   function random() private view returns(uint){
-    return uint(keccak256(abi.encodePacked(block.difficulty, now, players))); // ou sha3();
+    return uint(keccak256(abi.encodePacked(block.difficulty, now, players))); // ou sha3(); 
     // Eu poderia melhorar esta funcao injectando o clock da maquina, por ex
     // Esta funcoa nao e muito segura para gerar um numero aleatorio
   }
