@@ -1,5 +1,6 @@
 // Fetch the Storage contract data from the Storage.json file
 const Lottery = artifacts.require("Lottery");
+const LotteryDA = artifacts.require("LotteryDA");
 
 // JavaScript export
 module.exports = function(deployer) {
@@ -8,4 +9,5 @@ module.exports = function(deployer) {
 
     // Deploy the contract to the network
     deployer.deploy(Lottery);
+    deployer.deploy(LotteryDA);
 }
