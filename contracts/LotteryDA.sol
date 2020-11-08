@@ -5,7 +5,6 @@ contract LotteryDA{
   address payable public manager;
   address payable[] public players;
   address payable public lastWinner;
-  uint public numberOfTickets = 0;
 
   constructor() public{
     manager = msg.sender;
@@ -16,7 +15,6 @@ contract LotteryDA{
     uint temp = msg.value/(1e16);
     for (uint i=0; i<temp; i++)
       players.push(msg.sender);
-    numberOfTickets += temp;
   }
 
   function random() private view returns(uint){
@@ -29,7 +27,6 @@ contract LotteryDA{
     uint index = random() % players.length;
     lastWinner = players[index];
     lastWinner.transfer(address(this).balance);
-    numberOfTickets = 0;
   }
 
   modifier restricted(){
