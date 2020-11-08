@@ -146,8 +146,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.2", "ether")
             });
         }
-       // console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-       //     '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -162,8 +160,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.15", "ether")
             });
         }
-      //  console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -178,8 +174,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.2", "ether")
             });
         }
-      //  console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -194,8 +188,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.5", "ether")
             });
         }
-      //  console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -210,8 +202,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.70", "ether")
             });
         }
-     //   console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -226,31 +216,13 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.8", "ether")
             });
         }
-      //  console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
         assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
     });
 
-    it('supports 10 000 tickets (2 diferent adresses each with 50 ether)', async ()=>{
-        
-        for (i=0; i<2; i++){
-            await instance.enter({
-                from: accounts[i],
-                value: web3.utils.toWei("50", "ether")
-            });
-        }
-     //   console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-      //      '\n\t\tTrying to pick Winner.....');
-        await instance.pickWinner({
-            from: accounts[0]
-        });
-        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
-    });
-
-    it('supports 20 000 tickets (100 diferent adresses each with 1 ether)', async ()=>{
+    it('supports 10 000 tickets (100 diferent adresses each with 1 ether)', async ()=>{
         
         for (i=0; i<100; i++){
             await instance.enter({
@@ -258,11 +230,52 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("1", "ether")
             });
         }
-    //    console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-    //        '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
         assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
     });
+
+    it('supports 20 000 tickets (100 diferent adresses each with 2 ether)', async ()=>{
+        
+        for (i=0; i<100; i++){
+            await instance.enter({
+                from: accounts[i],
+                value: web3.utils.toWei("2", "ether")
+            });
+        }
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
+    });
+
+    it('supports 30 000 tickets (100 diferent adresses each with 2 ether)', async ()=>{
+        
+        for (i=0; i<100; i++){
+            await instance.enter({
+                from: accounts[i],
+                value: web3.utils.toWei("3", "ether")
+            });
+        }
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
+    });
+
+    it('supports 50 000 tickets (100 diferent adresses each with 5 ether)', async ()=>{
+        
+        for (i=0; i<100; i++){
+            await instance.enter({
+                from: accounts[i],
+                value: web3.utils.toWei("5", "ether")
+            });
+        }
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
+    });
+
 });

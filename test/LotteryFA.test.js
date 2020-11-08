@@ -1,8 +1,8 @@
-const lottery = artifacts.require('Lottery');
+const lottery = artifacts.require('LotteryFA');
 assert = require('assert');
 isAddress = require('web3')
 
-contract('Lottery', async(accounts) => {
+contract('LotteryFA', async(accounts) => {
     let instance;
 
     beforeEach( async () => {
@@ -130,8 +130,6 @@ contract('Lottery', async(accounts) => {
                 value: web3.utils.toWei("0.02", "ether")
             });
         }
-       // console.log('\t\tPlayers entered. Number of tickets = ' + await instance.numberOfTickets() + 
-       //     '\n\t\tTrying to pick Winner.....');
         await instance.pickWinner({
             from: accounts[0]
         });
@@ -229,38 +227,6 @@ contract('Lottery', async(accounts) => {
                 from: accounts[i],
                 value: web3.utils.toWei("1", "ether")
             });
-        }
-        await instance.pickWinner({
-            from: accounts[0]
-        });
-        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
-    });
-
-    it('supports 100 000 tickets (100 diferent adresses each with 1 ether * 10 times)', async ()=>{
-        for (j=0; j<10; j++){
-            for (i=0; i<100; i++){
-                await instance.enter({
-                    from: accounts[i],
-                    value: web3.utils.toWei("1", "ether")
-                });
-            }
-            console.log('Entered batch number ${j}!');
-        }
-        await instance.pickWinner({
-            from: accounts[0]
-        });
-        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
-    });
-
-    it('supports 1 000 000 tickets (100 diferent adresses each with 1 ether * 100 times)', async ()=>{
-        for (j=0; j<100; j++){
-            for (i=0; i<100; i++){
-                await instance.enter({
-                    from: accounts[i],
-                    value: web3.utils.toWei("1", "ether")
-                });
-            }
-            console.log('Entered batch number ${j}!');
         }
         await instance.pickWinner({
             from: accounts[0]
