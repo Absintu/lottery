@@ -1,16 +1,16 @@
 pragma solidity ^0.6.4;
 
 
-contract Lottery{
+contract LotteryMap{
   address payable public manager;
-  address payable[7000] public players;
+  mapping (uint =>  address payable) players;
   address payable public lastWinner;
   uint public numberOfTickets = 0;
 
   constructor() public{
     manager = msg.sender;
   }
-  
+
   function enter() public payable{
     require(msg.value >= .01 ether);
     uint temp = msg.value/(1e16);
@@ -19,7 +19,7 @@ contract Lottery{
   }
 
   function random() private view returns(uint){
-    return uint(keccak256(abi.encodePacked(block.difficulty, now, players))); // ou sha3(); 
+    return uint(keccak256(abi.encodePacked(block.difficulty, now, numberOfTickets))); // ou sha3();
     // Eu poderia melhorar esta funcao injectando o clock da maquina, por ex
     // Esta funcoa nao e muito segura para gerar um numero aleatorio
   }
@@ -36,10 +36,7 @@ contract Lottery{
     _;
   }
 
-  function getPlayers() external view returns(address payable[] memory ){
-    address payable[] memory p;
-    for(uint i=0; i<= numberOfTickets; i++)
-      p[i] = players[i];
-    return p;
+  function getPlayers() public view returns(uint){
+    return numberOfTickets;
   }
 }
