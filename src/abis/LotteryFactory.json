@@ -1,0 +1,2652 @@
+{
+  "contractName": "LotteryFactory",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract Lottery",
+          "name": "lottery",
+          "type": "address"
+        }
+      ],
+      "name": "LotteryCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "lotteryAdd",
+      "outputs": [
+        {
+          "internalType": "contract Lottery",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "manager",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "minAmount",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "createLottery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLottery",
+      "outputs": [
+        {
+          "internalType": "contract Lottery[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.4+commit.1dca32f3\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"contract Lottery\",\"name\":\"lottery\",\"type\":\"address\"}],\"name\":\"LotteryCreated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"minAmount\",\"type\":\"uint256[]\"}],\"name\":\"createLottery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLottery\",\"outputs\":[{\"internalType\":\"contract Lottery[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lotteryAdd\",\"outputs\":[{\"internalType\":\"contract Lottery\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/LotteryFactory.sol\":\"LotteryFactory\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1500},\"remappings\":[]},\"sources\":{\"/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/Lottery.sol\":{\"keccak256\":\"0x6be557ee504d262b9ed91ab628047a97f4d9135540fc2f49ed2712f20317a035\",\"urls\":[\"bzz-raw://176671c57900aaa0fc9d2f0490e0558c0ed7aeda057d5d7cb6ef8bcdae88d74c\",\"dweb:/ipfs/QmR3LmKDwC2RRT6vydpX3k3sLnKYgJtW2PSgGuHjL1HKGT\"]},\"/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/LotteryFactory.sol\":{\"keccak256\":\"0x1be99d21745602287f4dc6fbf1d5cafa299b4811d9b39aaf6604965f2af54baf\",\"urls\":[\"bzz-raw://ff752940c7c70ab4e1b52b09f7f450a547a744b13bbde40ee4830ae2cfc22bc1\",\"dweb:/ipfs/QmaK7X1DT6Tt79oHvZjFVZQ6hadqdVSRWR3ZCS8kudze1d\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060018054600160a060020a031916331790556109b0806100326000396000f3fe608060405234801561001057600080fd5b5060043610610068577c010000000000000000000000000000000000000000000000000000000060003504631fbbbc62811461006d578063257bbe86146100b3578063481c6a7514610158578063cbc2cce714610160575b600080fd5b61008a6004803603602081101561008357600080fd5b50356101b8565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b610156600480360360208110156100c957600080fd5b8101906020810181356401000000008111156100e457600080fd5b8201836020820111156100f657600080fd5b8035906020019184602083028401116401000000008311171561011857600080fd5b9190808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152509295506101ec945050505050565b005b61008a610543565b61016861055f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156101a457818101518382015260200161018c565b505050509050019250505060405180910390f35b600081815481106101c557fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b600154815160009173ffffffffffffffffffffffffffffffffffffffff16908390839061021557fe5b6020026020010151604051610229906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f080158015610267573d6000803e3d6000fd5b5060018054845192935060009273ffffffffffffffffffffffffffffffffffffffff909116918591811061029757fe5b60200260200101516040516102ab906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f0801580156102e9573d6000803e3d6000fd5b5090506000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460028151811061031e57fe5b6020026020010151604051610332906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f080158015610370573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff861673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252519192507fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf4919081900360200190a1600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff841673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf49181900360200190a1600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf49181900360200190a150505050565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b606060008054806020026020016040519081016040528092919081815260200182805480156105c457602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff168152600190910190602001808311610599575b5050505050905090565b61039f806105dc8339019056fe6080604052600060035534801561001557600080fd5b5060405161039f38038061039f8339818101604052604081101561003857600080fd5b50805160209091015160008054600160a060020a031916600160a060020a0390931692909217825560045561032c90819061007390396000f3fe608060405260043610610082576000357c0100000000000000000000000000000000000000000000000000000000900480638b5b9ccc116100605780638b5b9ccc14610103578063e97dcb6214610118578063fe1881841461012057610082565b806345745c1014610087578063481c6a75146100ae5780635d495aea146100ec575b600080fd5b34801561009357600080fd5b5061009c610135565b60408051918252519081900360200190f35b3480156100ba57600080fd5b506100c361013b565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100f857600080fd5b50610101610157565b005b34801561010f57600080fd5b5061009c61021c565b610101610222565b34801561012c57600080fd5b506100c36102a1565b60035481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff16331461017b57600080fd5b60006003546101886102bd565b8161018f57fe5b0660008181526001602052604080822054600280547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff928316179081905591519394501691303180156108fc0292909190818181858888f19350505050158015610213573d6000803e3d6000fd5b50506000600355565b60035490565b60045434101561023157600080fd5b6000600454662386f26fc1000002348161024757fe5b04905060005b8181101561029d57600380546001818101909255600090815260208290526040902080547fffffffffffffffffffffffff000000000000000000000000000000000000000016331790550161024d565b5050565b60025473ffffffffffffffffffffffffffffffffffffffff1681565b6003546040805144602080830191909152428284015260608083019490945282518083039094018452608090910190915281519101209056fea26469706673582212207e0e89b37933a6d8763f988d53ef876beeb1230c766d4ae4e84028f8b7091b4164736f6c63430006040033a26469706673582212200479a9460e009a05ab0f258494f6cd86455220f0e10bcb5fb38b52588316f69064736f6c63430006040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610068577c010000000000000000000000000000000000000000000000000000000060003504631fbbbc62811461006d578063257bbe86146100b3578063481c6a7514610158578063cbc2cce714610160575b600080fd5b61008a6004803603602081101561008357600080fd5b50356101b8565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b610156600480360360208110156100c957600080fd5b8101906020810181356401000000008111156100e457600080fd5b8201836020820111156100f657600080fd5b8035906020019184602083028401116401000000008311171561011857600080fd5b9190808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152509295506101ec945050505050565b005b61008a610543565b61016861055f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156101a457818101518382015260200161018c565b505050509050019250505060405180910390f35b600081815481106101c557fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b600154815160009173ffffffffffffffffffffffffffffffffffffffff16908390839061021557fe5b6020026020010151604051610229906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f080158015610267573d6000803e3d6000fd5b5060018054845192935060009273ffffffffffffffffffffffffffffffffffffffff909116918591811061029757fe5b60200260200101516040516102ab906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f0801580156102e9573d6000803e3d6000fd5b5090506000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460028151811061031e57fe5b6020026020010151604051610332906105ce565b73ffffffffffffffffffffffffffffffffffffffff90921682526020820152604080519182900301906000f080158015610370573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff861673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252519192507fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf4919081900360200190a1600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff841673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf49181900360200190a1600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56301805473ffffffffffffffffffffffffffffffffffffffff831673ffffffffffffffffffffffffffffffffffffffff19909116811790915560408051918252517fe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf49181900360200190a150505050565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b606060008054806020026020016040519081016040528092919081815260200182805480156105c457602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff168152600190910190602001808311610599575b5050505050905090565b61039f806105dc8339019056fe6080604052600060035534801561001557600080fd5b5060405161039f38038061039f8339818101604052604081101561003857600080fd5b50805160209091015160008054600160a060020a031916600160a060020a0390931692909217825560045561032c90819061007390396000f3fe608060405260043610610082576000357c0100000000000000000000000000000000000000000000000000000000900480638b5b9ccc116100605780638b5b9ccc14610103578063e97dcb6214610118578063fe1881841461012057610082565b806345745c1014610087578063481c6a75146100ae5780635d495aea146100ec575b600080fd5b34801561009357600080fd5b5061009c610135565b60408051918252519081900360200190f35b3480156100ba57600080fd5b506100c361013b565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100f857600080fd5b50610101610157565b005b34801561010f57600080fd5b5061009c61021c565b610101610222565b34801561012c57600080fd5b506100c36102a1565b60035481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff16331461017b57600080fd5b60006003546101886102bd565b8161018f57fe5b0660008181526001602052604080822054600280547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff928316179081905591519394501691303180156108fc0292909190818181858888f19350505050158015610213573d6000803e3d6000fd5b50506000600355565b60035490565b60045434101561023157600080fd5b6000600454662386f26fc1000002348161024757fe5b04905060005b8181101561029d57600380546001818101909255600090815260208290526040902080547fffffffffffffffffffffffff000000000000000000000000000000000000000016331790550161024d565b5050565b60025473ffffffffffffffffffffffffffffffffffffffff1681565b6003546040805144602080830191909152428284015260608083019490945282518083039094018452608090910190915281519101209056fea26469706673582212207e0e89b37933a6d8763f988d53ef876beeb1230c766d4ae4e84028f8b7091b4164736f6c63430006040033a26469706673582212200479a9460e009a05ab0f258494f6cd86455220f0e10bcb5fb38b52588316f69064736f6c63430006040033",
+  "sourceMap": "50:825:3:-:0;;;193:58;5:9:-1;2:2;;;27:1;24;17:12;2:2;-1:-1;224:7:3;:20;;-1:-1:-1;;;;;;224:20:3;234:10;224:20;;;50:825;;;;;;",
+  "deployedSourceMap": "50:825:3:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;50:825:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;79:27:3;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;79:27:3;;:::i;:::-;;;;;;;;;;;;;;;;;;;257:513;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;257:513:3;;;;;;;;27:11:-1;11:28;;8:2;;;52:1;49;42:12;8:2;257:513:3;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;257:513:3;;;;;;101:9:-1;95:2;81:12;77:21;67:8;63:36;60:51;39:11;25:12;22:29;11:108;8:2;;;132:1;129;122:12;8:2;257:513:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;257:513:3;;-1:-1:-1;257:513:3;;-1:-1:-1;;;;;257:513:3:i;:::-;;156:30;;;:::i;776:97::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;776:97:3;;;;;;;;;;;;;;;;;79:27;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;79:27:3;:::o;257:513::-;356:7;;365:12;;322:19;;356:7;;;365:9;;322:19;;365:12;;;;;;;;;;344:34;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;-1:-1:-1;344:34:3;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;424:7:3;;;433:12;;322:56;;-1:-1:-1;388:21:3;;424:7;;;;;433:9;;:12;;;;;;;;;;;;412:34;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;-1:-1:-1;412:34:3;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;412:34:3;388:58;;456:21;492:7;;;;;;;;;;;501:9;511:1;501:12;;;;;;;;;;;;;;480:34;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;-1:-1:-1;480:34:3;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;525:10:3;27::-1;;39:1;23:18;;45:23;;525:28:3;;;;;;;;;;-1:-1:-1;;525:28:3;;;;;;;;568:27;;;;;;;456:58;;-1:-1:-1;568:27:3;;;;;;525:28;568:27;;;605:10;27::-1;;39:1;23:18;;45:23;;605:30:3;;;;;;;;;;-1:-1:-1;;605:30:3;;;;;;;;650:29;;;;;;;;;;;;605:30;650:29;;;689:10;27::-1;;39:1;23:18;;45:23;;689:30:3;;;;;;;;;;-1:-1:-1;;689:30:3;;;;;;;;734:29;;;;;;;;;;;;689:30;734:29;;;257:513;;;;:::o;156:30::-;;;;;;:::o;776:97::-;821:16;856:10;849:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;776:97;:::o;50:825::-;;;;;;;;:::o",
+  "source": "pragma solidity ^0.6.4;\n\nimport \"./Lottery.sol\";\n\ncontract LotteryFactory{\n    Lottery[] public lotteryAdd;\n    event LotteryCreated(Lottery lottery);\n\n    address payable public manager;\n\n    constructor() public {\n        manager = msg.sender;\n    }\n\n    function createLottery(uint[] memory minAmount) public {\n        Lottery lotteryGold = new Lottery(manager, minAmount[0]);\n        Lottery lotterySilver = new Lottery(manager, minAmount[1]);\n        Lottery lotteryBronze = new Lottery(manager, minAmount[2]);\n\n        lotteryAdd.push(lotteryGold);\n        emit LotteryCreated(lotteryGold);\n        lotteryAdd.push(lotterySilver);\n        emit LotteryCreated(lotterySilver);\n        lotteryAdd.push(lotteryBronze);\n        emit LotteryCreated(lotteryBronze);\n    }\n\n    function getLottery() external view returns (Lottery[] memory) {\n        return lotteryAdd;\n    }\n}",
+  "sourcePath": "/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/LotteryFactory.sol",
+  "ast": {
+    "absolutePath": "/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/LotteryFactory.sol",
+    "exportedSymbols": {
+      "LotteryFactory": [
+        522
+      ]
+    },
+    "id": 523,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 426,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/Lottery.sol",
+        "file": "./Lottery.sol",
+        "id": 427,
+        "nodeType": "ImportDirective",
+        "scope": 523,
+        "sourceUnit": 144,
+        "src": "25:23:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [
+          143
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 522,
+        "linearizedBaseContracts": [
+          522
+        ],
+        "name": "LotteryFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "1fbbbc62",
+            "id": 430,
+            "name": "lotteryAdd",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 522,
+            "src": "79:27:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+              "typeString": "contract Lottery[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 428,
+                "name": "Lottery",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 143,
+                "src": "79:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Lottery_$143",
+                  "typeString": "contract Lottery"
+                }
+              },
+              "id": 429,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "79:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage_ptr",
+                "typeString": "contract Lottery[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 434,
+            "name": "LotteryCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 432,
+                  "indexed": false,
+                  "name": "lottery",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 434,
+                  "src": "133:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Lottery_$143",
+                    "typeString": "contract Lottery"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 431,
+                    "name": "Lottery",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 143,
+                    "src": "133:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "132:17:3"
+            },
+            "src": "112:38:3"
+          },
+          {
+            "constant": false,
+            "functionSelector": "481c6a75",
+            "id": 436,
+            "name": "manager",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 522,
+            "src": "156:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 435,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "156:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 444,
+              "nodeType": "Block",
+              "src": "214:37:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 442,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 439,
+                      "name": "manager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 436,
+                      "src": "224:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 440,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -15,
+                        "src": "234:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 441,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "234:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "224:20:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 443,
+                  "nodeType": "ExpressionStatement",
+                  "src": "224:20:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 445,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 437,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:2:3"
+            },
+            "returnParameters": {
+              "id": 438,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "214:0:3"
+            },
+            "scope": 522,
+            "src": "193:58:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 511,
+              "nodeType": "Block",
+              "src": "312:458:3",
+              "statements": [
+                {
+                  "assignments": [
+                    452
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 452,
+                      "name": "lotteryGold",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "322:19:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 451,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "322:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 460,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 455,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "356:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 456,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "365:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 458,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 457,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "375:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "365:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 454,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "344:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 453,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "348:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 459,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "344:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "322:56:3"
+                },
+                {
+                  "assignments": [
+                    462
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 462,
+                      "name": "lotterySilver",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "388:21:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 461,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "388:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 470,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 465,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "424:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 466,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "433:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 468,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 467,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "443:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "433:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 464,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "412:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 463,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "416:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "412:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "388:58:3"
+                },
+                {
+                  "assignments": [
+                    472
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 472,
+                      "name": "lotteryBronze",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "456:21:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 471,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "456:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 480,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 475,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "492:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 476,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "501:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 478,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "32",
+                          "id": 477,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "511:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_2_by_1",
+                            "typeString": "int_const 2"
+                          },
+                          "value": "2"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "501:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 474,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "480:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 473,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "484:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 479,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "480:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "456:58:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 484,
+                        "name": "lotteryGold",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 452,
+                        "src": "541:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 481,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "525:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 483,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "525:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 485,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "525:28:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 486,
+                  "nodeType": "ExpressionStatement",
+                  "src": "525:28:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 488,
+                        "name": "lotteryGold",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 452,
+                        "src": "583:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 487,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "568:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 489,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "568:27:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 490,
+                  "nodeType": "EmitStatement",
+                  "src": "563:32:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 494,
+                        "name": "lotterySilver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 462,
+                        "src": "621:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 491,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "605:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 493,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "605:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "605:30:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "605:30:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 498,
+                        "name": "lotterySilver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 462,
+                        "src": "665:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 497,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "650:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 499,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "650:29:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 500,
+                  "nodeType": "EmitStatement",
+                  "src": "645:34:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 504,
+                        "name": "lotteryBronze",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 472,
+                        "src": "705:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 501,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "689:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 503,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "689:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 505,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "689:30:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 506,
+                  "nodeType": "ExpressionStatement",
+                  "src": "689:30:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 508,
+                        "name": "lotteryBronze",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 472,
+                        "src": "749:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 507,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "734:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 509,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "734:29:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 510,
+                  "nodeType": "EmitStatement",
+                  "src": "729:34:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "257bbe86",
+            "id": 512,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLottery",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 448,
+                  "name": "minAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 512,
+                  "src": "280:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 446,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "280:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 447,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "280:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "279:25:3"
+            },
+            "returnParameters": {
+              "id": 450,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "312:0:3"
+            },
+            "scope": 522,
+            "src": "257:513:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 520,
+              "nodeType": "Block",
+              "src": "839:34:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 518,
+                    "name": "lotteryAdd",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 430,
+                    "src": "856:10:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                      "typeString": "contract Lottery[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 517,
+                  "id": 519,
+                  "nodeType": "Return",
+                  "src": "849:17:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "cbc2cce7",
+            "id": 521,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLottery",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:2:3"
+            },
+            "returnParameters": {
+              "id": 517,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 516,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 521,
+                  "src": "821:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_memory_ptr",
+                    "typeString": "contract Lottery[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 514,
+                      "name": "Lottery",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 143,
+                      "src": "821:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      }
+                    },
+                    "id": 515,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "821:9:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage_ptr",
+                      "typeString": "contract Lottery[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "820:18:3"
+            },
+            "scope": 522,
+            "src": "776:97:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 523,
+        "src": "50:825:3"
+      }
+    ],
+    "src": "0:875:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/LotteryFactory.sol",
+    "exportedSymbols": {
+      "LotteryFactory": [
+        522
+      ]
+    },
+    "id": 523,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 426,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/garibaldi/Documents/Crypto/Apps/lottery/contracts/Lottery.sol",
+        "file": "./Lottery.sol",
+        "id": 427,
+        "nodeType": "ImportDirective",
+        "scope": 523,
+        "sourceUnit": 144,
+        "src": "25:23:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [
+          143
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 522,
+        "linearizedBaseContracts": [
+          522
+        ],
+        "name": "LotteryFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "1fbbbc62",
+            "id": 430,
+            "name": "lotteryAdd",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 522,
+            "src": "79:27:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+              "typeString": "contract Lottery[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 428,
+                "name": "Lottery",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 143,
+                "src": "79:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Lottery_$143",
+                  "typeString": "contract Lottery"
+                }
+              },
+              "id": 429,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "79:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage_ptr",
+                "typeString": "contract Lottery[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 434,
+            "name": "LotteryCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 432,
+                  "indexed": false,
+                  "name": "lottery",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 434,
+                  "src": "133:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Lottery_$143",
+                    "typeString": "contract Lottery"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 431,
+                    "name": "Lottery",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 143,
+                    "src": "133:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "132:17:3"
+            },
+            "src": "112:38:3"
+          },
+          {
+            "constant": false,
+            "functionSelector": "481c6a75",
+            "id": 436,
+            "name": "manager",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 522,
+            "src": "156:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 435,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "156:15:3",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 444,
+              "nodeType": "Block",
+              "src": "214:37:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 442,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 439,
+                      "name": "manager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 436,
+                      "src": "224:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 440,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -15,
+                        "src": "234:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 441,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "234:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "224:20:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 443,
+                  "nodeType": "ExpressionStatement",
+                  "src": "224:20:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 445,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 437,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:2:3"
+            },
+            "returnParameters": {
+              "id": 438,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "214:0:3"
+            },
+            "scope": 522,
+            "src": "193:58:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 511,
+              "nodeType": "Block",
+              "src": "312:458:3",
+              "statements": [
+                {
+                  "assignments": [
+                    452
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 452,
+                      "name": "lotteryGold",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "322:19:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 451,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "322:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 460,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 455,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "356:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 456,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "365:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 458,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 457,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "375:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "365:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 454,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "344:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 453,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "348:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 459,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "344:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "322:56:3"
+                },
+                {
+                  "assignments": [
+                    462
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 462,
+                      "name": "lotterySilver",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "388:21:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 461,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "388:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 470,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 465,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "424:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 466,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "433:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 468,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 467,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "443:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "433:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 464,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "412:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 463,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "416:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "412:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "388:58:3"
+                },
+                {
+                  "assignments": [
+                    472
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 472,
+                      "name": "lotteryBronze",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 511,
+                      "src": "456:21:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 471,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "456:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 480,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 475,
+                        "name": "manager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "492:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 476,
+                          "name": "minAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "501:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                            "typeString": "uint256[] memory"
+                          }
+                        },
+                        "id": 478,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "32",
+                          "id": 477,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "511:1:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_2_by_1",
+                            "typeString": "int_const 2"
+                          },
+                          "value": "2"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "501:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 474,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "480:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_payable_$_t_uint256_$returns$_t_contract$_Lottery_$143_$",
+                        "typeString": "function (address payable,uint256) returns (contract Lottery)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 473,
+                        "name": "Lottery",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 143,
+                        "src": "484:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    },
+                    "id": 479,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "480:34:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Lottery_$143",
+                      "typeString": "contract Lottery"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "456:58:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 484,
+                        "name": "lotteryGold",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 452,
+                        "src": "541:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 481,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "525:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 483,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "525:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 485,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "525:28:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 486,
+                  "nodeType": "ExpressionStatement",
+                  "src": "525:28:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 488,
+                        "name": "lotteryGold",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 452,
+                        "src": "583:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 487,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "568:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 489,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "568:27:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 490,
+                  "nodeType": "EmitStatement",
+                  "src": "563:32:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 494,
+                        "name": "lotterySilver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 462,
+                        "src": "621:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 491,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "605:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 493,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "605:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "605:30:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "605:30:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 498,
+                        "name": "lotterySilver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 462,
+                        "src": "665:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 497,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "650:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 499,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "650:29:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 500,
+                  "nodeType": "EmitStatement",
+                  "src": "645:34:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 504,
+                        "name": "lotteryBronze",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 472,
+                        "src": "705:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 501,
+                        "name": "lotteryAdd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 430,
+                        "src": "689:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                          "typeString": "contract Lottery[] storage ref"
+                        }
+                      },
+                      "id": 503,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "689:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 505,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "689:30:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 506,
+                  "nodeType": "ExpressionStatement",
+                  "src": "689:30:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 508,
+                        "name": "lotteryBronze",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 472,
+                        "src": "749:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Lottery_$143",
+                          "typeString": "contract Lottery"
+                        }
+                      ],
+                      "id": 507,
+                      "name": "LotteryCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 434,
+                      "src": "734:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Lottery_$143_$returns$__$",
+                        "typeString": "function (contract Lottery)"
+                      }
+                    },
+                    "id": 509,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "734:29:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 510,
+                  "nodeType": "EmitStatement",
+                  "src": "729:34:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "257bbe86",
+            "id": 512,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLottery",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 448,
+                  "name": "minAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 512,
+                  "src": "280:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 446,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "280:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 447,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "280:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "279:25:3"
+            },
+            "returnParameters": {
+              "id": 450,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "312:0:3"
+            },
+            "scope": 522,
+            "src": "257:513:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 520,
+              "nodeType": "Block",
+              "src": "839:34:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 518,
+                    "name": "lotteryAdd",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 430,
+                    "src": "856:10:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage",
+                      "typeString": "contract Lottery[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 517,
+                  "id": 519,
+                  "nodeType": "Return",
+                  "src": "849:17:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "cbc2cce7",
+            "id": 521,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLottery",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:2:3"
+            },
+            "returnParameters": {
+              "id": 517,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 516,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 521,
+                  "src": "821:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_memory_ptr",
+                    "typeString": "contract Lottery[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 514,
+                      "name": "Lottery",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 143,
+                      "src": "821:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Lottery_$143",
+                        "typeString": "contract Lottery"
+                      }
+                    },
+                    "id": 515,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "821:9:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Lottery_$143_$dyn_storage_ptr",
+                      "typeString": "contract Lottery[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "820:18:3"
+            },
+            "scope": 522,
+            "src": "776:97:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 523,
+        "src": "50:825:3"
+      }
+    ],
+    "src": "0:875:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.4+commit.1dca32f3.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xe610764cbcba803247df3450b7492f6a0084b7b5b734a7901c13fef8f84ffaf4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "contract Lottery",
+              "name": "lottery",
+              "type": "address"
+            }
+          ],
+          "name": "LotteryCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x41Ad084085cAf5c4A86efd504eF6A60f04126149",
+      "transactionHash": "0xbc4c0f3338188a6c90ef1efb5f718e4e2119032f16c3b4e3b675778027e5a3e5"
+    }
+  },
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-11-09T03:03:13.875Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

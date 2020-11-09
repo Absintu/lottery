@@ -1,7 +1,7 @@
 pragma solidity ^0.6.4;
 
 
-contract Lottery{
+contract LotteryFA{
   address payable public manager;
   address payable[60000] public players;
   address payable public lastWinner;

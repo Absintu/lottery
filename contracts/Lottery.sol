@@ -1,19 +1,22 @@
 pragma solidity ^0.6.4;
 
 
-contract LotteryMap{
+contract Lottery{
   address payable public manager;
   mapping (uint =>  address payable) players;
   address payable public lastWinner;
   uint public numberOfTickets = 0;
+  uint minAmount;
 
-  constructor() public{
-    manager = msg.sender;
+  constructor(address payable _manager, uint _minAmount) public{
+    manager = _manager;
+    minAmount = _minAmount;
   }
 
   function enter() public payable{
-    require(msg.value >= .01 ether);
-    uint temp = msg.value/(1e16);
+    require(msg.value >= minAmount);
+    // Calculates the step to incrise aka value of each ticker: 0.01 ether, 0.1 ether, etc
+    uint temp = msg.value/((1e16)*minAmount);
     for (uint i=0; i<temp; i++)
       players[numberOfTickets++]=msg.sender;
   }

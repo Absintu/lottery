@@ -236,6 +236,38 @@ contract('Lottery', async(accounts) => {
         assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
     });
 
+    it('supports 100 000 tickets (100 diferent adresses each with 1 ether * 10 times)', async ()=>{
+        for (j=0; j<10; j++){
+            for (i=0; i<100; i++){
+                await instance.enter({
+                    from: accounts[i],
+                    value: web3.utils.toWei("1", "ether")
+                });
+            }
+            console.log('Entered batch number ${j}!');
+        }
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
+    });
+
+    it('supports 1 000 000 tickets (100 diferent adresses each with 1 ether * 100 times)', async ()=>{
+        for (j=0; j<100; j++){
+            for (i=0; i<100; i++){
+                await instance.enter({
+                    from: accounts[i],
+                    value: web3.utils.toWei("1", "ether")
+                });
+            }
+            console.log('Entered batch number ${j}!');
+        }
+        await instance.pickWinner({
+            from: accounts[0]
+        });
+        assert.notEqual('0x0000000000000000000000000000000000000000', await instance.lastWinner());
+    });
+
     it('supports 20 000 tickets (100 diferent adresses each with 2 ether)', async ()=>{
         
         for (i=0; i<100; i++){
