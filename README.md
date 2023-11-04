@@ -2,6 +2,8 @@
 
 This project was merged by two other that are now deprecated and were on diferent folders. One was the lottery project that had the smart contracts for the lottery system and the other was the lottery-ui (the user interface).
 
+lottery-git-master.absintu.vercel.app
+
 Now we have a lottery project merged on same folder, with a diferent route on the source path:)
 Still in dev. EXPECT BUGS
 
