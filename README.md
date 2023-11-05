@@ -1,14 +1,10 @@
 # Lottery project
 
-This project was merged by two other that are now deprecated and were on diferent folders. One was the lottery project that had the smart contracts for the lottery system and the other was the lottery-ui (the user interface).
+Lottery App supported on EVM
+smart contract for a lottery system and respective fronted app
 
 Deployment site:
 https://lottery-git-master.absintu.vercel.app
-
-Now we have a lottery project merged on same folder, with a diferent route on the source path:)
-Still in dev. EXPECT BUGS
-
-Abs out
 
 ## Available Scripts
 
