@@ -1,6 +1,7 @@
 # Lottery project
 
 Lottery App supported on EVM
+
 smart contract for a lottery system and respective fronted app
 
 Deployment site:
